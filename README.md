@@ -1,71 +1,120 @@
-# praytime README
+*“While coding, did you forget to pray?”*
 
-This is the README for your extension "praytime". After writing up a brief description, we recommend including the following sections.
+# VSCode Prayer Times
 
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+A **Visual Studio Code extension** that seamlessly integrates Islamic prayer times into your coding workflow. Never miss a prayer again—stay focused on your code and your faith.
 
 ---
 
-## Following extension guidelines
+## 🚀 Key Features
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+* **VS Code Integration**: Fully integrated as an extension—no external apps needed.
+* **Activity Bar Panel**: Click the prayer icon in the Activity Bar to view today’s full prayer schedule.
+* **Status Bar Countdown**: Live countdown to the next upcoming prayer right in your Status Bar.
+* **Pre-Prayer Alerts**: Configurable reminder (default 5 minutes) before each prayer.
+* **On-Time Notifications**: Receive a notification exactly when prayer time begins.
+* **Automatic Geolocation**: Detects your city and country through secure IP lookup.
+* **Daily Cache & Midnight Refresh**: Caches data for the day, automatically refreshing at midnight.
+* **Manual Refresh Command**: Instantly update prayer times via the Command Palette (`Refresh Prayer Times`).
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+---
 
-## Working with Markdown
+## ⚙️ Installation
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+1. **Prerequisites**
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+   * [Node.js](https://nodejs.org/) (v14 or newer)
+   * Visual Studio Code (v1.60 or newer)
 
-## For more information
+2. **Clone the repository**
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+   ```bash
+   git clone https://github.com/<your-username>/vscode-prayer-times.git
+   cd vscode-prayer-times
+   ```
 
-**Enjoy!**
+3. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+4. **Build the extension**
+
+   ```bash
+   npm run compile
+   ```
+
+5. **Launch the extension**
+
+   * Open this folder in VS Code.
+   * Press <kbd>F5</kbd> to start an Extension Development Host window.
+   * The extension will activate on startup and display prayer times.
+
+---
+
+## 💡 Usage
+
+* **Status Bar**: Watch a live countdown to the next prayer.
+* **Activity Bar**: Click the Prayer Times icon for today’s full schedule.
+* **Notifications**:
+
+  * Pre-prayer reminder (default 5 minutes before).
+  * On-time alert at the exact prayer moment.
+* **Commands**:
+
+  * `Refresh Prayer Times` – Manually fetch and update times.
+
+---
+
+## 🛠 Configuration
+
+Customize settings in your VS Code `settings.json`:
+
+```json
+{
+  "prayerTimes.calculationMethod": 13,       // Calculation method (e.g., Diyanet = 13)
+  "prayerTimes.overrideLocation": "City, Country",
+  "prayerTimes.preAlertMinutes": 5          // Minutes before prayer for reminder
+}
+```
+
+---
+
+## ✅ Testing
+
+1. **Unit Tests**
+
+   ```bash
+   npm test
+   ```
+
+2. **Manual End-to-End**
+
+   * Launch via <kbd>F5</kbd>.
+   * Confirm countdown appears in the Status Bar.
+   * Open Activity Bar panel to view schedule.
+   * Wait for or simulate prayer times to see notifications.
+   * Run `Refresh Prayer Times` to force-update.
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Please open an issue or submit a pull request.
+
+---
+
+## 📅 Roadmap
+
+* Calendar heatmap view of prayer times
+* Localization and regional support
+* Theme-aware styling (light/dark)
+* Unit tests for Webview components
+* Screenshots and visual assets
+
+---
+
+## 📄 License
+
+Licensed under the MIT License. See [LICENSE](LICENSE) for details.
