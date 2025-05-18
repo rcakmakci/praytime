@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Prayer Times</title>
+		<link href="{{styleUri}}" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Prayer Times</h1>
+			<div class="location-info">
+				<span id="location"></span> - <span id="date"></span>
+			</div>
+			<div id="prayer-times" class="prayer-times-container"></div>
+			<button id="refresh-button">Refresh</button>
+
+			<div class="debug-container">
+				<details>
+					<summary>Debug Info</summary>
+					<div id="debug-output" class="debug-output"></div>
+				</details>
+			</div>
+		</div>
+		<script src="{{scriptUri}}"></script>
+	</body>
+</html>
